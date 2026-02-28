@@ -2,17 +2,23 @@
 {
 	"$schema": "node_modules/wrangler/config-schema.json",
 	"name": "project-starter",
+	"main": "src/worker.js",
 	"compatibility_date": "2026-02-28",
 	"assets": {
 		"directory": "./public",
 		"binding": "ASSETS"
 	},
+	"routes": [
+		{ "pattern": "example.com", "custom_domain": true }
+	],
 	"observability": {
-		"enabled": true
+		"enabled": true,
+		"head_sampling_rate": 1,
+		"logs": { "enabled": true }
 	},
 	"compatibility_flags": [
 		"nodejs_compat"
-	]
+	],
 	// Smart Placement: 
 	// https://developers.cloudflare.com/workers/configuration/smart-placement/#smart-placement
 	// "placement": {  "mode": "smart" }
