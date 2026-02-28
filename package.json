@@ -1,5 +1,12 @@
 {
   "devDependencies": {
     "wrangler": "^4.69.0"
+  },
+    "scripts": {
+    "dev": "cd $(basename \"$PWD\") && wrangler dev",
+    "deploy": "cd $(basename \"$PWD\") && wrangler deploy",
+    "remote": "cd $(basename \"$PWD\") && wrangler dev --remote",
+    "log": "cd $(basename \"$PWD\") && wrangler tail",
+    "update:wrangler": "npm install wrangler@latest --save-dev"
   }
 }
