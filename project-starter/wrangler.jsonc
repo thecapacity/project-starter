@@ -1,0 +1,27 @@
+// Details: https://developers.cloudflare.com/workers/wrangler/configuration/
+{
+	"$schema": "node_modules/wrangler/config-schema.json",
+	"name": "project-starter",
+	"compatibility_date": "2026-02-28",
+	"assets": {
+		"directory": "./public"
+	},
+	"observability": {
+		"enabled": true
+	},
+	"compatibility_flags": [
+		"nodejs_compat"
+	]
+	// Smart Placement: 
+	// https://developers.cloudflare.com/workers/configuration/smart-placement/#smart-placement
+	// "placement": {  "mode": "smart" }
+	// Bindings allow interactions with resources on the Cloudflare Developer Platform
+	// https://developers.cloudflare.com/workers/runtime-apis/bindings/
+	// Environment Variables
+	// https://developers.cloudflare.com/workers/wrangler/configuration/#environment-variables
+	// https://developers.cloudflare.com/workers/configuration/secrets/
+	// "vars": {  "MY_VARIABLE": "production_value" }
+	// Service Bindings (communicate between multiple Workers)
+	// https://developers.cloudflare.com/workers/wrangler/configuration/#service-bindings
+	// "services": [  {   "binding": "MY_SERVICE",   "service": "my-service"  } ]
+}
