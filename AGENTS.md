@@ -28,8 +28,8 @@ project-starter/
 ├── package.json          ← Consolidated: wrangler + vitest devDeps
 ├── wrangler.jsonc        ← Cloudflare Worker config (customize per project)
 ├── vitest.config.js      ← Two test environments: CF Workers + Node
-├── public/
-│   └── index.html        ← Static site served by CF Assets
+├── site/
+│   └── index.html        ← Vite entry point (source HTML)
 ├── src/
 │   └── worker.js         ← Worker fetch handler
 ├── migrations/           ← D1 SQL migration files (0001_init.sql, etc.)

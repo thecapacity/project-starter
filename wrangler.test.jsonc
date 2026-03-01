@@ -1,0 +1,10 @@
+// Minimal wrangler config used by vitest-pool-workers.
+// Omits the assets binding so tests don't require `dist/` to exist.
+// (wrangler.jsonc is the real config for dev/deploy.)
+{
+	"$schema": "node_modules/wrangler/config-schema.json",
+	"name": "project-starter",
+	"main": "src/worker.js",
+	"compatibility_date": "2026-02-28",
+	"compatibility_flags": ["nodejs_compat"]
+}

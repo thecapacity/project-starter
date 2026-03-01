@@ -64,7 +64,7 @@ backup.sql
 !.env.example
 
 # Build outputs
-dist/
+_site/
 out
 .cache
 .parcel-cache
