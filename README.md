@@ -46,7 +46,14 @@ The following wrangler commands assume that the [`wrangler`](https://developers.
 | `npm run log` | Tail worker logs |
 | `npm run update:wrangler` | Update wrangler to latest |
 
-We'll also use `project-starter` as the worker name but you should change this and also if you use environments to deploy then you may need to name them; e.g. wrangler will append `-<env>` name to the worker name but if you want versions to all use the same worker / app then you shoudl overwrite this setting.
+## Endpoints
+
+- `/` — serves `public/index.html` (static asset)
+- `*` — any other path hits the Worker fetch handler
+
+## D1 Database Migrations
+
+Migration files in `migrations/` follow the pattern `0001_init.sql`, `0002_*.sql`, etc.
 
 ```bash
 # Create the D1 database (one-time setup)
