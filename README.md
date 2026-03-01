@@ -75,7 +75,7 @@ wrangler d1 execute project-starter --remote \
 
 ## Binding
 
-Don't forget to bind the database in your `wrangler.jsonc` file, something like:
+Add the D1 binding to `wrangler.jsonc`:
 
 ```jsonc
 "d1_databases": [
