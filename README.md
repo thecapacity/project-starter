@@ -63,6 +63,10 @@ npx wrangler d1 execute project-starter --local --file="./migrations/0001_init.s
 npx wrangler d1 execute project-starter --local --command="DROP table TEST"
 npx wrangler d1 execute project-starter --remote --file="./migrations/0002_init.sql"
 npx wrangler d1 execute project-starter --remote --command="SELECT * from TEST"
+# Apply migrations
+`wrangler d1 migrations apply project-starter --local   # local dev`
+`wrangler d1 migrations apply project-starter --remote  # production`
+
 
 # Test the database exists, --local can be swapped with --remote
  `npx wrangler d1 execute project-starter --local --command="SELECT * from TEST"`
@@ -71,11 +75,6 @@ npx wrangler d1 execute project-starter --remote --command="SELECT * from TEST"
  ```wrangler d1 execute project-starter --remote \
   --command "SELECT * FROM TEST" \
   --output csv > TEST_dump.csv
-```
-
-# Apply migrations
-wrangler d1 migrations apply project-starter --local   # local dev
-wrangler d1 migrations apply project-starter --remote  # production
 ```
 
 Add the D1 binding to `wrangler.jsonc`:
