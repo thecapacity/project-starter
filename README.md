@@ -73,7 +73,10 @@ wrangler d1 execute project-starter --remote \
   --output csv > TEST_dump.csv
 ```
 
-## Binding
+# Apply migrations
+wrangler d1 migrations apply project-starter --local   # local dev
+wrangler d1 migrations apply project-starter --remote  # production
+```
 
 Add the D1 binding to `wrangler.jsonc`:
 
