@@ -49,7 +49,7 @@ The following wrangler commands assume that the [`wrangler`](https://developers.
 We'll also use `project-starter` as the worker name but you should change this and also if you use environments to deploy then you may need to name them; e.g. wrangler will append `-<env>` name to the worker name but if you want versions to all use the same worker / app then you shoudl overwrite this setting.
 
 ```bash
-# Create the D1 database and apply the initial schema
+# Create the D1 database (one-time setup)
 wrangler d1 create project-starter
 wrangler d1 migrations apply project-starter --remote
 npx wrangler d1 execute project-starter --local --file="./migrations/0001_init.sql"
