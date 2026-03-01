@@ -87,7 +87,7 @@ Don't forget to bind the database in your `wrangler.jsonc` file, something like:
      ],
      ```
 
-## Endpoints
+## Using as a Template
 
 After deploying the worker, the following endpoints are available:
 
