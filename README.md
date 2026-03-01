@@ -91,5 +91,7 @@ Don't forget to bind the database in your `wrangler.jsonc` file, something like:
 
 When creating a new project from this template:
 
-- `/` will direct to the `public/index.html` (note any static assets overwrite the worker path)
-- `*` anything else will redirect ot the worker handler
+1. Update `"name"` in `wrangler.jsonc` and `package.json`
+2. Update `"routes"` in `wrangler.jsonc` (or remove for workers.dev subdomain)
+3. Add bindings (D1, KV, R2, etc.) to `wrangler.jsonc` as needed
+4. Run `npm install` then `npm run dev`
