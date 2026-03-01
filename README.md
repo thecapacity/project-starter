@@ -89,7 +89,7 @@ Don't forget to bind the database in your `wrangler.jsonc` file, something like:
 
 ## Using as a Template
 
-After deploying the worker, the following endpoints are available:
+When creating a new project from this template:
 
 - `/` will direct to the `public/index.html` (note any static assets overwrite the worker path)
 - `*` anything else will redirect ot the worker handler
