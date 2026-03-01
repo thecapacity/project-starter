@@ -34,7 +34,17 @@ npm run deploy   # Deploy to Cloudflare
 
 ## Commands
 
-The following wrangler commands assume that the [`wrangler`](https://developers.cloudflare.com/workers/wrangler/) CLI is installed and authenticated.
+The following wrangler commands assume that the [`wrangler`](https://developers.cloudflare.com/workers/wrangler/) CLI is installed and authenticated. 
+
+| Command | Purpose |
+|---------|---------|
+| `npm run dev` | Local dev server (wrangler dev) |
+| `npm run deploy` | Deploy to Cloudflare |
+| `npm test` | Run all tests |
+| `npm run test:watch` | Vitest watch mode |
+| `npm run remote` | Dev against remote CF environment |
+| `npm run log` | Tail worker logs |
+| `npm run update:wrangler` | Update wrangler to latest |
 
 We'll also use `project-starter` as the worker name but you should change this and also if you use environments to deploy then you may need to name them; e.g. wrangler will append `-<env>` name to the worker name but if you want versions to all use the same worker / app then you shoudl overwrite this setting.
 
