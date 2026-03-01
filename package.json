@@ -10,7 +10,16 @@
     "log": "wrangler tail",
     "test": "vitest run",
     "test:watch": "vitest",
-    "update:wrangler": "npm install wrangler@latest --save-dev"
+    "update:wrangler": "npm install wrangler@latest --save-dev",
+    "db:init": "wrangler d1 create project-starter",
+    "db:upgrade": "wrangler d1 migrations apply project-starter --local",
+    "db:upgrade:remote": "wrangler d1 migrations apply project-starter --remote",
+    "db:rollback": "node scripts/db-rollback.js",
+    "db:rollback:remote": "node scripts/db-rollback.js --remote",
+    "db:dump": "wrangler d1 export project-starter --local --output=backup.sql",
+    "db:dump:remote": "wrangler d1 export project-starter --remote --output=backup.sql",
+    "db:load": "wrangler d1 execute project-starter --local --file=backup.sql",
+    "db:load:remote": "wrangler d1 execute project-starter --remote --file=backup.sql"
   },
   "devDependencies": {
     "@cloudflare/vitest-pool-workers": "^0.12.18",
