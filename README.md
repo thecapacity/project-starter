@@ -1,5 +1,36 @@
 # project-starter
-Setting up a project baseline for future work
+
+A GitHub template repo for Cloudflare Workers projects. Provides a minimal baseline: static site + Worker + vitest testing + D1 migration groundwork.
+
+We use `project-starter` as the worker name but you should change this and also if you use environments to deploy then you may need to name them; e.g. wrangler will append `-<env>` name to the worker name but if you want versions to all use the same worker / app then you shoudl overwrite this setting. 
+
+## Structure
+
+```
+project-starter/
+├── CLAUDE.md             ← Claude Code instructions
+├── AGENTS.md             ← CF-specific guidance for AI coding tools
+├── package.json          ← Scripts and devDependencies
+├── wrangler.jsonc        ← Cloudflare Worker config
+├── vitest.config.js      ← Test config (CF Workers + Node environments)
+├── public/
+│   └── index.html        ← Static site (served by CF Assets)
+├── src/
+│   └── worker.js         ← CF Worker fetch handler
+├── migrations/           ← D1 SQL migration files
+└── test/
+    ├── worker.test.js    ← Worker tests (CF Workers runtime)
+    └── index.test.js     ← Static HTML smoke tests
+```
+
+## Quick Start
+
+```bash
+npm install
+npm run dev      # Local development
+npm test         # Run tests
+npm run deploy   # Deploy to Cloudflare
+```
 
 ## Commands
 
