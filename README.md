@@ -4,6 +4,8 @@ A GitHub template repo for Cloudflare Workers projects. Provides a minimal basel
 
 We use `project-starter` as the worker name but you should change this and also if you use environments to deploy then you may need to name them; e.g. wrangler will append `-<env>` name to the worker name but if you want versions to all use the same worker / app then you shoudl overwrite this setting. 
 
+One thing to flag: when adopting this template, do a find-replace of "project-starter" → your project name in both package.json and wrangler.jsonc. The DB name in scripts follows the same name as the worker.
+
 ## Structure
 
 ```
@@ -72,7 +74,7 @@ Migration files in `migrations/` follow the pattern `0001_init.sql`, `0002_*.sql
 # Test the database exists, --local can be swapped with --remote
  `npx wrangler d1 execute project-starter --local --command="SELECT * from TEST"`
 
-# Dump data to CSV
+# Dump data to CSV or run ad-hoc queries
  ```wrangler d1 execute project-starter --remote \
   --command "SELECT * FROM TEST" \
   --output csv > TEST_dump.csv
