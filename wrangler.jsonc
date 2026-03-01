@@ -31,4 +31,13 @@
 	// Service Bindings (communicate between multiple Workers)
 	// https://developers.cloudflare.com/workers/wrangler/configuration/#service-bindings
 	// "services": [  {   "binding": "MY_SERVICE",   "service": "my-service"  } ]
+	// D1 Database
+	// https://developers.cloudflare.com/d1/get-started/
+	// "d1_databases": [
+	//   {
+	//     "binding": "DB",
+	//     "database_name": "project-starter-DB",
+	//     "database_id": "<unique-ID-for-the-database>"
+	//   }
+	// ]
 }
