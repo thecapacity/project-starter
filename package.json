@@ -1,12 +1,20 @@
 {
-  "devDependencies": {
-    "wrangler": "^4.69.0"
-  },
-    "scripts": {
-    "dev": "cd $(basename \"$PWD\") && wrangler dev",
-    "deploy": "cd $(basename \"$PWD\") && wrangler deploy",
-    "remote": "cd $(basename \"$PWD\") && wrangler dev --remote",
-    "log": "cd $(basename \"$PWD\") && wrangler tail",
+  "name": "project-starter",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "start": "wrangler dev",
+    "remote": "wrangler dev --remote",
+    "log": "wrangler tail",
+    "test": "vitest run",
+    "test:watch": "vitest",
     "update:wrangler": "npm install wrangler@latest --save-dev"
+  },
+  "devDependencies": {
+    "@cloudflare/vitest-pool-workers": "^0.8.0",
+    "vitest": "^3.0.0",
+    "wrangler": "^4.69.0"
   }
 }
