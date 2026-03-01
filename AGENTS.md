@@ -54,18 +54,26 @@ Retrieve API references and limits from:
 
 ## D1 Migrations
 
-Migration files live in `migrations/` and are named `0001_init.sql`, `0002_*.sql`, etc.
+Migration files live in `migrations/`. Convention: each `.sql` file can have a paired `.down.sql` for rollback.
 
-```bash
-# Create database (one-time)
-wrangler d1 create <db-name>
-
-# Apply migrations
-wrangler d1 migrations apply <db-name> --local
-wrangler d1 migrations apply <db-name> --remote
-
-# Run ad-hoc queries
-wrangler d1 execute <db-name> --local --command="SELECT * FROM table"
 ```
+migrations/0001_init.sql        ← forward migration (applied by db:upgrade)
+migrations/0001_init.down.sql   ← rollback (applied by db:rollback)
+```
+
+| Command | Purpose |
+|---------|---------|
+| `npm run db:init` | `wrangler d1 create project-starter` (one-time) |
+| `npm run db:upgrade` | Apply pending migrations (local) |
+| `npm run db:upgrade:remote` | Apply pending migrations (remote) |
+| `npm run db:rollback` | Roll back last migration (local) |
+| `npm run db:rollback:remote` | Roll back last migration (remote) |
+| `npm run db:dump` | Export DB → backup.sql (local) |
+| `npm run db:dump:remote` | Export DB → backup.sql (remote) |
+| `npm run db:load` | Import backup.sql (local) |
+| `npm run db:load:remote` | Import backup.sql (remote) |
+
+Rollback is handled by `scripts/db-rollback.js` — no native D1 rollback exists.
+DB name defaults to `"project-starter"`; override with `DB_NAME=<name>`.
 
 Don't forget to add the D1 binding to `wrangler.jsonc` after creating the database.
