@@ -57,17 +57,17 @@ Migration files in `migrations/` follow the pattern `0001_init.sql`, `0002_*.sql
 
 ```bash
 # Create the D1 database (one-time setup)
-wrangler d1 migrations apply project-starter --remote
-npx wrangler d1 execute project-starter --local --file="./migrations/0001_init.sql"
-npx wrangler d1 execute project-starter --local --command="DROP table TEST"
-npx wrangler d1 execute project-starter --remote --file="./migrations/0002_init.sql"
-npx wrangler d1 execute project-starter --remote --command="SELECT * from TEST"
 `wrangler d1 create project-starter`
 
 # Apply migrations
 `wrangler d1 migrations apply project-starter --local   # local dev`
 `wrangler d1 migrations apply project-starter --remote  # production`
 
+### Other D1 Commands (optional or for testing)
+ `npx wrangler d1 execute project-starter --local --file="./migrations/0001_init.sql"`
+ `npx wrangler d1 execute project-starter --local --command="DROP table TEST"`
+ `npx wrangler d1 execute project-starter --remote --file="./migrations/0002_init.sql"`
+ `npx wrangler d1 execute project-starter --remote --command="SELECT * from TEST"`
 
 # Test the database exists, --local can be swapped with --remote
  `npx wrangler d1 execute project-starter --local --command="SELECT * from TEST"`
