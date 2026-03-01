@@ -50,13 +50,27 @@ Two test environments in `vitest.config.js`:
 
 ## D1 Migrations
 
-Files in `migrations/` follow the pattern `0001_init.sql`, `0002_*.sql`, etc.
-
-Apply with:
-```bash
-wrangler d1 migrations apply <db-name> --local   # local dev
-wrangler d1 migrations apply <db-name> --remote  # production
+Migration files live in `migrations/`. Each migration can have an optional paired down file:
 ```
+migrations/0001_init.sql        ← forward migration
+migrations/0001_init.down.sql   ← rollback (optional but recommended)
+```
+
+| Command | Purpose |
+|---------|---------|
+| `npm run db:init` | Create the D1 database (one-time; copy the output ID into wrangler.jsonc) |
+| `npm run db:upgrade` | Apply pending migrations (local) |
+| `npm run db:upgrade:remote` | Apply pending migrations (remote) |
+| `npm run db:rollback` | Roll back last migration (local; requires .down.sql) |
+| `npm run db:rollback:remote` | Roll back last migration (remote) |
+| `npm run db:dump` | Export DB to backup.sql (local) |
+| `npm run db:dump:remote` | Export DB to backup.sql (remote) |
+| `npm run db:load` | Import backup.sql (local) |
+| `npm run db:load:remote` | Import backup.sql (remote) |
+
+Rollback is implemented in `scripts/db-rollback.js`. It queries `d1_migrations` for the last applied migration, applies the matching `.down.sql`, and removes the record.
+
+The DB name defaults to `"project-starter"` — override with `DB_NAME=<name> npm run db:rollback`.
 
 Add the D1 binding to `wrangler.jsonc` — see the commented-out example in that file.
 
