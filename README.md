@@ -68,7 +68,7 @@ npx wrangler d1 execute project-starter --remote --command="SELECT * from TEST"
  `npx wrangler d1 execute project-starter --local --command="SELECT * from TEST"`
 
 # Dump data to CSV
-wrangler d1 execute project-starter --remote \
+ ```wrangler d1 execute project-starter --remote \
   --command "SELECT * FROM TEST" \
   --output csv > TEST_dump.csv
 ```
