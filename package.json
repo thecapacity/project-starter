@@ -13,7 +13,7 @@
     "update:wrangler": "npm install wrangler@latest --save-dev"
   },
   "devDependencies": {
-    "@cloudflare/vitest-pool-workers": "^0.8.0",
+    "@cloudflare/vitest-pool-workers": "^0.12.18",
     "vitest": "^3.0.0",
     "wrangler": "^4.69.0"
   }
