@@ -65,7 +65,7 @@ npx wrangler d1 execute project-starter --remote --file="./migrations/0002_init.
 npx wrangler d1 execute project-starter --remote --command="SELECT * from TEST"
 
 # Test the database exists, --local can be swapped with --remote
- npx wrangler d1 execute project-starter --local --command="SELECT * from TEST"
+ `npx wrangler d1 execute project-starter --local --command="SELECT * from TEST"`
 
 # Dump data to CSV
 wrangler d1 execute project-starter --remote \
