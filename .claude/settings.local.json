@@ -4,7 +4,9 @@
       "WebFetch(domain:blog.cloudflare.com)",
       "Bash(npm install:*)",
       "Bash(npm audit:*)",
-      "Bash(npm test:*)"
+      "Bash(npm test:*)",
+      "WebFetch(domain:developers.cloudflare.com)",
+      "WebSearch"
     ]
   }
 }
