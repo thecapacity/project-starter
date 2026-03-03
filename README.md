@@ -6,6 +6,14 @@ We use `project-starter` as the worker name but you should change this and also 
 
 One thing to flag: when adopting this template, do a find-replace of "project-starter" → your project name in both package.json and wrangler.jsonc. The DB name in scripts follows the same name as the worker.
 
+## Additional
+
+* `/plugin install playwright@claude-plugins-official`
+* `/plugin marketplace add anthropics/claude-code` && `/plugin install frontend-design@claude-code-plugins`
+* `/install-github-app`
+* ` ... `
+
+
 ## Structure
 
 ```
