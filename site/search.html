@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Search — Project Starter</title>
+		<style>
+			/* Skeleton layout — design applied later */
+
+			/* Sidebar drawer */
+			site-sidebar {
+				position: fixed;
+				top: 0;
+				left: 0;
+				z-index: 100;
+			}
+			.sidebar-toggle {
+				position: fixed;
+				top: 0.75rem;
+				left: 0.75rem;
+				z-index: 101;
+				cursor: pointer;
+			}
+			.sidebar-panel {
+				position: fixed;
+				top: 0;
+				left: 0;
+				height: 100vh;
+				width: 240px;
+				overflow-y: auto;
+				padding: 3rem 1rem 1rem;
+				transform: translateX(-100%);
+				transition: transform 0.2s ease;
+				background: #fff;
+				border-right: 1px solid #ccc;
+				z-index: 100;
+			}
+			.sidebar-panel[aria-hidden="false"] {
+				transform: translateX(0);
+			}
+
+			/* Page layout */
+			.search-hero {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				min-height: 25vh;
+				padding: 1rem;
+			}
+			search-bar {
+				display: block;
+				width: 100%;
+				max-width: 640px;
+			}
+			.search-form {
+				display: flex;
+				gap: 0.5rem;
+			}
+			.search-input {
+				flex: 1;
+				padding: 0.5rem;
+				font-size: 1rem;
+			}
+
+			/* Results */
+			.results-section {
+				padding: 1rem;
+				max-width: 800px;
+				margin: 0 auto;
+			}
+			.results-list {
+				list-style: none;
+				padding: 0;
+				margin: 0;
+			}
+			.result-card {
+				padding: 0.75rem 0;
+				border-bottom: 1px solid #eee;
+			}
+			.result-card h3 {
+				margin: 0 0 0.25rem;
+			}
+			.result-url {
+				font-size: 0.8rem;
+				color: #666;
+				display: block;
+				margin-bottom: 0.25rem;
+			}
+			.result-card p {
+				margin: 0;
+			}
+		</style>
+	</head>
+	<body>
+		<site-sidebar></site-sidebar>
+		<site-header></site-header>
+		<site-nav></site-nav>
+		<main>
+			<section class="search-hero">
+				<search-bar></search-bar>
+			</section>
+			<section class="results-section">
+				<results-feed></results-feed>
+			</section>
+		</main>
+		<site-footer></site-footer>
+		<script type="module" src="/main.js"></script>
+	</body>
+</html>
