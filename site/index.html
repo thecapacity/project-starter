@@ -11,6 +11,20 @@
 		<main>
 			<h1 id="heading">Hello, World!</h1>
 			<p>This page is built by Vite from <code>site/index.html</code> and served as a static asset via Cloudflare.</p>
+			<hr>
+			<h2>Gatekeeper demo</h2>
+			<p>
+				Visiting this page sets a <code>gk_visited</code> cookie.
+				The link below will pass the gatekeeper because of that cookie <em>and</em>
+				because the <code>Referer</code> header will point back to this origin.
+			</p>
+			<p>
+				<a href="/protected/sample.html">Open protected document →</a>
+			</p>
+			<p>
+				To test the gatekeeper page, open that link in a private/incognito window
+				or paste the URL directly into the address bar.
+			</p>
 		</main>
 		<site-footer></site-footer>
 		<script type="module" src="/main.js"></script>

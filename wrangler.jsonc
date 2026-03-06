@@ -47,4 +47,29 @@
 	//     "database_id": "<unique-ID-for-the-database>"
 	//   }
 	// ]
+
+	// ── Gatekeeper: protected file storage ────────────────────────────────────
+	//
+	// Option A — R2 bucket (recommended for storing PDFs and other large files)
+	// 1. Create the bucket:  wrangler r2 bucket create my-protected-files
+	// 2. Upload files:       wrangler r2 object put my-protected-files/report.pdf --file ./report.pdf
+	// 3. Uncomment the binding below so env.FILES is available in the worker.
+	//
+	// Files are stored flat; the path under /protected/ maps directly to the R2 key.
+	// e.g. GET /protected/report.pdf  →  env.FILES.get("report.pdf")
+	//
+	// "r2_buckets": [
+	//   {
+	//     "binding": "FILES",
+	//     "bucket_name": "my-protected-files"
+	//   }
+	// ]
+
+	// Option B — external origin proxy
+	// Set EXTERNAL_FILES_ORIGIN to the base URL of your upstream file host.
+	// The worker will proxy authorized requests and strip upstream Set-Cookie headers.
+	//
+	// "vars": {
+	//   "EXTERNAL_FILES_ORIGIN": "https://files.example.com"
+	// }
 }
