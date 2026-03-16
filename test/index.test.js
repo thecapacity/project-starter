@@ -1,21 +1,23 @@
 import { readFileSync } from "fs";
 import { expect, it } from "vitest";
 
-it("index.html contains Hello World heading", () => {
+it("index.html uses the link-surfer web component", () => {
   const html = readFileSync("site/index.html", "utf-8");
-  expect(html).toContain('<h1 id="heading">Hello, World!</h1>');
+  expect(html).toContain("<link-surfer>");
 });
 
-it("index.html uses web component tags for layout chrome", () => {
+it("index.html includes the surfer-toolbar component", () => {
   const html = readFileSync("site/index.html", "utf-8");
-  expect(html).toContain("<site-header>");
-  expect(html).toContain("<site-nav>");
-  expect(html).toContain("<site-footer>");
+  expect(html).toContain("<surfer-toolbar>");
 });
 
-it("about.html reuses the same web component layout chrome", () => {
-  const html = readFileSync("site/about.html", "utf-8");
-  expect(html).toContain("<site-header>");
-  expect(html).toContain("<site-nav>");
-  expect(html).toContain("<site-footer>");
+it("index.html loads main.js as a module", () => {
+  const html = readFileSync("site/index.html", "utf-8");
+  expect(html).toContain('type="module"');
+  expect(html).toContain("main.js");
+});
+
+it("index.html disables user-scalable for touch gesture accuracy", () => {
+  const html = readFileSync("site/index.html", "utf-8");
+  expect(html).toContain("user-scalable=no");
 });

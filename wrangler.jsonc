@@ -1,7 +1,7 @@
 // Details: https://developers.cloudflare.com/workers/wrangler/configuration/
 {
 	"$schema": "node_modules/wrangler/config-schema.json",
-	"name": "project-starter",
+	"name": "link-surfer",
 	"main": "src/worker.js",
 	"compatibility_date": "2026-02-28",
 	"assets": {
@@ -40,11 +40,12 @@
 	// "services": [  {   "binding": "MY_SERVICE",   "service": "my-service"  } ]
 	// D1 Database
 	// https://developers.cloudflare.com/d1/get-started/
-	// "d1_databases": [
-	//   {
-	//     "binding": "DB",
-	//     "database_name": "project-starter-DB",
-	//     "database_id": "<unique-ID-for-the-database>"
-	//   }
-	// ]
+	// Run `npm run db:init` once to create the database, then paste the ID below.
+	"d1_databases": [
+	  {
+	    "binding": "DB",
+	    "database_name": "link-surfer",
+	    "database_id": "00000000-0000-0000-0000-000000000000"
+	  }
+	]
 }

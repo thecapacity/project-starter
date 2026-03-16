@@ -1,18 +1,23 @@
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Hello, World!</title>
-	</head>
-	<body>
-		<site-header></site-header>
-		<site-nav></site-nav>
-		<main>
-			<h1 id="heading">Hello, World!</h1>
-			<p>This page is built by Vite from <code>site/index.html</code> and served as a static asset via Cloudflare.</p>
-		</main>
-		<site-footer></site-footer>
-		<script type="module" src="/main.js"></script>
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <title>Link Surfer</title>
+    <style>
+      *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+      html, body {
+        height: 100%;
+        overflow: hidden;
+        background: #0a0a0a;
+        font-family: system-ui, -apple-system, sans-serif;
+        color: #f0f0f0;
+      }
+    </style>
+  </head>
+  <body>
+    <link-surfer></link-surfer>
+    <surfer-toolbar></surfer-toolbar>
+    <script type="module" src="/main.js"></script>
+  </body>
 </html>

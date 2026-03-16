@@ -1,10 +1,17 @@
 // Minimal wrangler config used by vitest-pool-workers.
-// Omits the assets binding so tests don't require `dist/` to exist.
+// Omits the assets binding so tests don't require `_site/` to exist.
 // (wrangler.jsonc is the real config for dev/deploy.)
 {
 	"$schema": "node_modules/wrangler/config-schema.json",
-	"name": "project-starter",
+	"name": "link-surfer",
 	"main": "src/worker.js",
 	"compatibility_date": "2026-02-28",
-	"compatibility_flags": ["nodejs_compat"]
+	"compatibility_flags": ["nodejs_compat"],
+	"d1_databases": [
+	  {
+	    "binding": "DB",
+	    "database_name": "link-surfer",
+	    "database_id": "00000000-0000-0000-0000-000000000000"
+	  }
+	]
 }
