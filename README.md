@@ -108,3 +108,12 @@ When creating a new project from this template:
 2. Update `"routes"` in `wrangler.jsonc` (or remove for workers.dev subdomain)
 3. Add bindings (D1, KV, R2, etc.) to `wrangler.jsonc` as needed
 4. Run `npm install` then `npm run dev`
+
+Note, this includes a `.github/workflow/template_sync.yml` file to auto sync.
+
+You could also:
+* `git remote add template https://github.com/thecapacity/project-starter`
+* `git fetch template`
+* `git checkout main`
+* `git merge template/main --allow-unrelated-histories`
+
